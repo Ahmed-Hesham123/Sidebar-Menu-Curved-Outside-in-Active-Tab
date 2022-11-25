@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+.navigation {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  width: 4.375rem;
+  box-sizing: initial;
+  background: rgba(77, 91, 249, 0.5);
+  backdrop-filter: blur(0.625rem);
+  -webkit-backdrop-filter: blur(0.625rem);
+  border-radius: 0.625rem;
+  border-left: 0.3125rem solid rgba(77, 91, 249, 0.4);
+  transition: width 0.5s;
+  overflow-x: hidden;
+}
+.navigation.active {
+  width: 18.75rem;
+}
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0.3125rem;
+  padding-top: 2.5rem;
+}
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  border-top-left-radius: 3.125rem;
+  border-bottom-left-radius: 3.125rem;
+}
+.navigation ul li.active {
+  background: #fff;
+}
+.navigation ul li b:nth-child(1) {
+  position: absolute;
+  top: -1.25rem;
+  height: 1.25rem;
+  width: 100%;
+  background: #fff;
+  display: none;
+}
+.navigation ul li b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 1.25rem;
+  background: rgba(77, 91, 249, 0.5);
+}
+.navigation ul li b:nth-child(2) {
+  position: absolute;
+  bottom: -1.25rem;
+  height: 1.25rem;
+  width: 100%;
+  background: #fff;
+  display: none;
+}
+.navigation ul li b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 1.25rem;
+  background: rgba(77, 91, 249, 0.5);
+}
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  color: #fff;
+}
+.navigation ul li.active a {
+  color: rgb(77, 91, 249);
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 3.75rem;
+  height: 3.75rem;
+  line-height: 4.375rem;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.5em;
+}
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding-left: 0.325rem;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  white-space: normal;
+}
+.toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: rgba(77, 91, 249, 0.5);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.625rem);
+  -webkit-backdrop-filter: blur(0.625rem);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle.active {
+  background: #ff4d89;
+}
+.toggle ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 2.8em;
+  display: none;
+  transition: 0.5s;
+}
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+  display: block;
+}
+.toggle.active ion-icon.open,
+.toggle ion-icon.close {
+  display: none;
+}
